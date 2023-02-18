@@ -1,8 +1,9 @@
+
 <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
   <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
   <div class="form-floating">
-    <input type="text" class="form-control" id="login" placeholder="name@example.com" formControlName="usuario">
+    <input type="text" class="form-control" id="login" placeholder="name@example.com" formControlName="username">
     <label>Username</label>
   </div>
   <div class="form-floating">
@@ -15,6 +16,6 @@
       <input type="checkbox" value="remember-me"> Remember me
     </label>
   </div>
-  <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+  <button class="w-100 btn btn-lg btn-primary" type="submit" value="Log In">Sign in</button>
   <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
 </form>
