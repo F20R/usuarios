@@ -1,0 +1,27 @@
+body{
+  background-size: cover;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #f0f3f4;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #f0f3f4;
+  opacity: 0.5; /* Firefox */
+}
+
+footer{
+
+  background-color: #0c0f15;
+  color: #f0f3f4;
+
+}
+

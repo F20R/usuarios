@@ -13,19 +13,20 @@ import {Router} from "@angular/router";
 export class LoginComponent {
 
   loginForm = new FormGroup({
-    username: new FormControl('god', Validators.required),
-    password: new FormControl('123456', Validators.required),
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
   })
 
   constructor(private api:ApiService, private router:Router) {}
 
+
   onLogin(form:LoginI){
-    this.api.loginByEmail(form).subscribe(data=>{
-    console.log(data)
-      let dataResponse: ResponseI = data;
+    this.api.loginByUsername(form).subscribe(data=>{
+    console.log(data);
+    let dataResponse:ResponseI = data;
     if (dataResponse.status){
       localStorage.setItem('token', dataResponse.token);
-      this.router.navigate(['dashboard']);
+      this.router.navigate(["/"]);
     }
     });
 
