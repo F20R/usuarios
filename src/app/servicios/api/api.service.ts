@@ -15,6 +15,6 @@ export class ApiService {
 
   loginByUsername(form:LoginI):Observable<ResponseI>{
     let direccion = this.url;
-    return this.http.post<ResponseI>(direccion, form);
+    return this.http.post<ResponseI>(direccion , form);
   }
 }

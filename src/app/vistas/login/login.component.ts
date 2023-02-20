@@ -24,9 +24,9 @@ export class LoginComponent {
     this.api.loginByUsername(form).subscribe(data=>{
     console.log(data);
     let dataResponse:ResponseI = data;
-    if (dataResponse.status){
-      localStorage.setItem('token', dataResponse.token);
-      this.router.navigate(["/"]);
+      if(dataResponse.status == "ok"){
+      localStorage.setItem("token", dataResponse.result.token)
+      this.router.navigate(['dashboard']);
     }
     });
 

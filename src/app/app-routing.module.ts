@@ -4,13 +4,15 @@ import {LoginComponent} from "./vistas/login/login.component";
 import {EditarComponent} from "./vistas/editar/editar.component";
 import {NuevoComponent} from "./vistas/nuevo/nuevo.component";
 import {DashboardComponent} from "./vistas/dashboard/dashboard.component";
+import {ChatComponent} from "./vistas/chat/chat.component";
 
 const routes: Routes = [
-  {path:'', redirectTo:'dashboard', pathMatch:"full"},
+  {path:'', redirectTo:'login', pathMatch:"full"},
   {path:'login', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent},
   {path:'nuevo', component:NuevoComponent},
-  {path:'editar', component:EditarComponent}
+  {path:'editar', component:EditarComponent},
+  {path:'chat', component:ChatComponent}
 ];
 
 @NgModule({

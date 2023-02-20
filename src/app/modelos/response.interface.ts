@@ -1,6 +1,5 @@
 export interface ResponseI{
   status:string;
-  response:string;
+  result:any;
 
-  token:string;
 }
