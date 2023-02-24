@@ -15,22 +15,22 @@
             <li class="clearfix active">
               <img src="https://www.soyfutbol.com/__export/1651714183491/sites/debate/img/2022/03/27/leo_messi_video_aficion.jpg_423682103.jpg" alt="avatar">
               <div class="about">
-                <div class="name">Aiden Chavez</div>
+                <div class="name" *ngFor="let chat of chats">{{chat.emisor}}</div>
                 <div class="status"> <i class="fa fa-circle online"></i> online </div>
               </div>
             </li>
           </ul>
         </div>
-        <div class="chat">
+        <div class="chat" >
           <div class="chat-header clearfix">
-            <div class="row">
+            <div class="row" >
               <div class="col-lg-6">
                 <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
                   <img src="https://www.soyfutbol.com/__export/1651714183491/sites/debate/img/2022/03/27/leo_messi_video_aficion.jpg_423682103.jpg" alt="avatar">
                 </a>
-                <div class="chat-about">
-                  <h6 class="m-b-0" style="color: white">Aiden Chavez</h6>
-                  <small style="color: white">Última vez: hace 2 horas</small>
+                <div class="chat-about" >
+                  <h6 class="m-b-0" style="color: white" *ngFor="let chat of chats">{{chat.emisor}}</h6>
+                  <small style="color: white"*ngFor="let chat of ListarChat">{{chat.fecha}}</small>
                 </div>
               </div>
               <div class="col-lg-6 hidden-sm text-right">
@@ -41,14 +41,14 @@
               </div>
             </div>
           </div>
-          <div class="chat-history">
+          <div class="chat-history" >
             <ul class="m-b-0">
-              <li class="clearfix">
-                <div class="message-data text-right">
+              <li *ngFor="let chat of chats" class="clearfix">
+                <div class="message-data text-right" >
                   <span class="message-data-time" style="color: white"><!--10:10 AM, Today--></span>
                   <!--<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">-->
                 </div>
-                <div class="message other-message float-right"> Hi Aiden, how are you? How is the project coming along? </div>
+                <div class="message other-message float-right"><span>{{chat.mensaje}} </span></div>
               </li>
               <li class="clearfix">
                 <div class="message-data">

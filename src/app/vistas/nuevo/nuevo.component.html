@@ -1,1 +1,17 @@
-<p>nuevo works!</p>
+<form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="nombre">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Nombre Usuario</label>
+    <input type="text" class="form-control" id="exampleInputPassword12" formControlName="nombreUsuario">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Telefono</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" formControlName="telefono">
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="RedirectListaContacto()">Submit</button>
+</form>
+
