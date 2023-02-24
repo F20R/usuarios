@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { FormGroup, FormControl, Validators} from "@angular/forms";
 import {ApiService} from "../../servicios/api/api.service";
 import {LoginI} from "../../modelos/login.interface";
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
   loginForm = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -19,16 +19,26 @@ export class LoginComponent {
 
   constructor(private api:ApiService, private router:Router) {}
 
+  ngOnInit() {
+  }
+
+  checkLocalStorage(){
+    if(localStorage.getItem('token')){
+      this.router.navigate(['contacto'])
+    }
+  }
 
   onLogin(form:LoginI){
     this.api.loginByUsername(form).subscribe(data=>{
     console.log(data);
     let dataResponse:ResponseI = data;
-      if(dataResponse.status == "ok"){
-      localStorage.setItem("token", dataResponse.result.token)
-      this.router.navigate(['dashboard']);
+      if(dataResponse.token){
+      localStorage.setItem("token", dataResponse.token);
+      this.router.navigate(['contacto']);
     }
     });
 
   }
+
+
 }
