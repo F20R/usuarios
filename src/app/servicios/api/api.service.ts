@@ -6,6 +6,7 @@ import {ResponseI} from "../../modelos/response.interface";
 import {listaContactoI} from '../../modelos/listaContacto.interface';
 import {ContactoI} from '../../modelos/contacto.interface';
 import {ChatI} from "../../modelos/chat.interface";
+import {CrearCuentaI} from "../../modelos/crearCuenta.interface";
 @Injectable({
   providedIn: 'root'
 })
@@ -44,6 +45,16 @@ export class ApiService {
   getChat():Observable<ChatI[]>{
     let direccion = this.url + 'api/chat/list';
     return this.http.get<ChatI[]>(direccion)
+  }
+
+  postCrearCuenta(form : CrearCuentaI) : Observable<ResponseI>{
+    let direccion = this.url + 'api/usuario/save';
+    return this.http.post<ResponseI>(direccion,form);
+  }
+
+  postChat(form : ChatI) : Observable<ResponseI>{
+    let direccion = this.url + 'api/chat/save';
+    return this.http.post<ResponseI>(direccion,form);
   }
 
 

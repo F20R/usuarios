@@ -67,7 +67,7 @@
           <div class="chat-message clearfix">
             <div class="input-group mb-0">
               <div class="input-group-prepend">
-                <span class="input-group-text" style="height: 40px; margin-right: 5px ; background-color: #D4ECE5"><i class="fa fa-send"></i></span>
+                <span class="input-group-text" style="height: 40px; margin-right: 5px ; background-color: #D4ECE5" (click)="postChat(chatForm.value)"><i class="fa fa-send"></i></span>
               </div>
               <input type="text" class="form-control" placeholder="Introduce texto aquí...">
             </div>
