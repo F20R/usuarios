@@ -5,6 +5,8 @@ import {Router} from '@angular/router'
 import {listaContactoI} from '../../modelos/listaContacto.interface'
 import {ContactoI} from "../../modelos/contacto.interface";
 import {HttpClient} from "@angular/common/http";
+import {LoginI} from "../../modelos/login.interface";
+import {ResponseI} from "../../modelos/response.interface";
 
 @Component({
   selector: 'app-contacto',
@@ -19,7 +21,7 @@ export class ContactoComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.obtenerDatos()
+    this.obtenerDatos();
   }
   obtenerDatos(){
     this.api.getAllContactos().subscribe(resp => {
@@ -33,7 +35,7 @@ export class ContactoComponent implements OnInit{
   }
 
   eliminarUser={
-    'id':'6'
+    'id':'18'
   }
   eliminar(){
 
@@ -47,5 +49,25 @@ export class ContactoComponent implements OnInit{
   nuevoContacto(){
     this.router.navigate(['nuevo'])
   }
+
+  RedirectCrearCuenta(){
+    this.router.navigate(['login'])
+  }
+
+  RedirectCrearCuenta1(){
+    this.router.navigate(['crearCuenta'])
+  }
+
+  RedirectContactos(){
+    this.router.navigate(['contacto'])
+  }
+
+
+  logout(){
+    localStorage.removeItem("token");
+    this.router.navigate(['login']);
+  }
+
+
 
 }

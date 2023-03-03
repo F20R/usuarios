@@ -1,5 +1,5 @@
 export interface CrearCuentaI {
-  usuario: string;
+  username: string;
   password : string;
-
+  rol : any;
 }

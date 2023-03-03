@@ -10,6 +10,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {ChatComponent} from './vistas/chat/chat.component';
 import {CrearcuentaComponent} from './vistas/crearcuenta/crearcuenta.component';
 import { ContactoComponent } from './vistas/contacto/contacto.component';
+import { InicioComponent } from './vistas/inicio/inicio.component';
+import { BinicioComponent } from './vistas/binicio/binicio.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { ContactoComponent } from './vistas/contacto/contacto.component';
     CrearcuentaComponent,
     routingComponents,
     ContactoComponent,
+    InicioComponent,
+    BinicioComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,7 @@ import { ContactoComponent } from './vistas/contacto/contacto.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

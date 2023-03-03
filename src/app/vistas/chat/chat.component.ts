@@ -12,15 +12,27 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class ChatComponent implements OnInit {
 
   chats:any;
+  chats1 : any;
 
   chatForm = new FormGroup({
-    mensaje : new FormControl('')
+    mensaje : new FormControl(''),
+    emisor : new FormControl('jcarirojas1'),
+    receptor : new FormControl('antoniogp'),
+    fecha : new FormControl('')
+  })
+
+  chatForm1 = new FormGroup({
+    mensaje : new FormControl(''),
+    emisor : new FormControl('antoniogp'),
+    receptor : new FormControl('jcarirojas1'),
+    fecha : new FormControl('')
   })
 
   constructor(private api : ApiService, private router:Router) { }
 
   ngOnInit(): void {
-    this.obtenerDatos()
+    this.obtenerDatos();
+    this.obtenerDatos1()
   }
 
 
@@ -31,9 +43,17 @@ export class ChatComponent implements OnInit {
     })
   }
 
+  obtenerDatos1(){
+    this.api.getChat().subscribe(resp => {
+      this.chats1 = resp;
+      console.log(this.chats1)
+    })
+  }
+
   postChat(form :any){
-    this.api.postChat(form).subscribe(data =>{
+    this.api.postChat1(form).subscribe(data =>{
       console.log(data);
+      this.router.navigate(['contacto']);
 
     })
   }

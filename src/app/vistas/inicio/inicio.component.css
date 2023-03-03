@@ -1,0 +1,11 @@
+* {
+  margin: -8px;
+  padding: 0;
+}
+.hero {
+  position: revert;
+  height: 100vh;
+  background: url(src/assets/images/bg_inicio.jpg) 0 0 / cover no-repeat;
+  -webkit-animation: gradientAnimation 40s ease infinite;
+  animation: gradientAnimation 40s ease infinite;
+}

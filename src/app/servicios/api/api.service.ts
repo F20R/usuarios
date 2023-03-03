@@ -52,7 +52,7 @@ export class ApiService {
     return this.http.post<ResponseI>(direccion,form);
   }
 
-  postChat(form : ChatI) : Observable<ResponseI>{
+  postChat1(form : ChatI) : Observable<ResponseI>{
     let direccion = this.url + 'api/chat/save';
     return this.http.post<ResponseI>(direccion,form);
   }

@@ -17,7 +17,7 @@ export class NuevoComponent implements OnInit{
     nombre : new FormControl(''),
     nombreUsuario : new FormControl(''),
     telefono : new FormControl(''),
-    usuario : new FormControl('')
+    usuario : new FormControl('antoniogp')
   })
 
   constructor(private api : ApiService, private router: Router) {
@@ -31,12 +31,28 @@ export class NuevoComponent implements OnInit{
   postForm(form :any){
     this.api.postContacto(form).subscribe(data =>{
       console.log(data);
-
     })
   }
 
   RedirectListaContacto(){
     this.router.navigate(['contacto'])
+  }
+
+  RedirectCrearCuenta(){
+    this.router.navigate(['login'])
+  }
+
+  RedirectCrearCuenta1(){
+    this.router.navigate(['crearCuenta'])
+  }
+
+  RedirectContactos(){
+    this.router.navigate(['contacto'])
+  }
+
+  logout(){
+    localStorage.removeItem("token");
+    this.router.navigate(['login']);
   }
 
 }
