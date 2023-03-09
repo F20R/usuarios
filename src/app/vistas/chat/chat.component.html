@@ -1,4 +1,4 @@
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <body style="background-image: url('https://blog.1a23.com/wp-content/uploads/sites/2/2020/02/Desktop.png') ; background-size: cover">
 <div class="container" style="margin-top: 20px ; ">
   <div class="row clearfix">
@@ -45,8 +45,8 @@
             <ul class="m-b-0">
               <li *ngFor="let chat of chats" class="clearfix">
                 <div class="message-data text-right" >
-                  <span class="message-data-time" style="color: white"><!--10:10 AM, Today--></span>
-                  <!--<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">-->
+                  <span class="message-data-time" style="color: white">10:10 AM, Today</span>
+                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
                 </div>
                 <div class="message other-message float-right"><span>{{chat.mensaje}} </span></div>
               </li>
@@ -77,3 +77,107 @@
     <small>&copy; SYSMIC</small>
   </div>
 </footer>
+-->
+
+<div class="--dark-theme" id="chat">
+  <div class="chat__conversation-board">
+    <div class="chat__conversation-board__message-container">
+
+
+      <div class="chat__conversation-board__message__options">
+        <button class="btn-icon chat__conversation-board__message__option-button option-item emoji-button">
+          <svg class="feather feather-smile sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+        </button>
+        <button class="btn-icon chat__conversation-board__message__option-button option-item more-button">
+          <svg class="feather feather-more-horizontal sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="1"></circle>
+            <circle cx="19" cy="12" r="1"></circle>
+            <circle cx="5" cy="12" r="1"></circle>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="chat__conversation-board__message-container">
+
+      <div class="chat__conversation-board__message__options">
+        <button class="btn-icon chat__conversation-board__message__option-button option-item emoji-button">
+          <svg class="feather feather-smile sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+          </svg>
+        </button>
+        <button class="btn-icon chat__conversation-board__message__option-button option-item more-button">
+          <svg class="feather feather-more-horizontal sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="1"></circle>
+            <circle cx="19" cy="12" r="1"></circle>
+            <circle cx="5" cy="12" r="1"></circle>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="chat__conversation-board__message-container reversed" *ngFor="let chat of chats">
+      <div class="chat__conversation-board__message__person">
+        <div class="chat__conversation-board__message__person__avatar"><img src="https://randomuser.me/api/portraits/men/9.jpg" alt="Dennis Mikle"/></div><span class="chat__conversation-board__message__person__nickname">Dennis Mikle</span>
+      </div>
+      <div class="chat__conversation-board__message__context">
+        <div class="chat__conversation-board__message__bubble"> <span>{{chat.mensaje}}</span></div>
+      </div>
+    </div>
+
+
+    <div class="chat__conversation-board__message-container" *ngFor="let chatr of chats1">
+      <div class="chat__conversation-board__message__person">
+        <div class="chat__conversation-board__message__person__avatar" ><img src="https://randomuser.me/api/portraits/men/20.jpg" alt="Monika Figi"/></div><span class="chat__conversation-board__message__person__nickname">Monika Figi</span>
+      </div>
+      <div class="chat__conversation-board__message__context">
+        <div class="chat__conversation-board__message__bubble"> <span>{{chatr.mensaje}}</span></div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+  <div class="chat__conversation-panel">
+    <form class="chat__conversation-panel__container" [formGroup]="chatForm1" (ngSubmit)="postChat(chatForm1.value)">
+      <button class="chat__conversation-panel__button panel-item btn-icon add-file-button">
+        <svg class="feather feather-plus sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </button>
+      <button class="chat__conversation-panel__button panel-item btn-icon emoji-button">
+        <svg class="feather feather-smile sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+          <line x1="9" y1="9" x2="9.01" y2="9"></line>
+          <line x1="15" y1="9" x2="15.01" y2="9"></line>
+        </svg>
+      </button>
+
+
+      <input class="chat__conversation-panel__input panel-item" placeholder="Type a message..." formControlName="mensaje"/>
+
+
+
+      <button type="submit" class="chat__conversation-panel__button panel-item btn-icon send-message-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24  " fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-reactid="1036">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+
+    </form>
+  </div>
+</div>

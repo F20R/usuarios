@@ -9,7 +9,7 @@ import {ContactoComponent} from "./vistas/contacto/contacto.component";
 import {InicioComponent} from "./vistas/inicio/inicio.component";
 
 const routes: Routes = [
-  {path:'', redirectTo:'login', pathMatch:"full"},
+  {path:'', redirectTo:'inicio', pathMatch:"full"},
   {path:'login', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent},
   {path:'nuevo', component:NuevoComponent},

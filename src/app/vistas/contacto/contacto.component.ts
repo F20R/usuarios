@@ -35,7 +35,7 @@ export class ContactoComponent implements OnInit{
   }
 
   eliminarUser={
-    'id':'18'
+    'id':'31'
   }
   eliminar(){
 

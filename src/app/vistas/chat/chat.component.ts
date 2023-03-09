@@ -3,6 +3,8 @@ import {ApiService} from "../../servicios/api/api.service";
 import {Router} from "@angular/router";
 import {ChatI} from "../../modelos/chat.interface";
 import {FormControl, FormGroup} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
+import {AuthService} from "../../auth.service";
 
 @Component({
   selector: 'app-chat',
@@ -28,11 +30,10 @@ export class ChatComponent implements OnInit {
     fecha : new FormControl('')
   })
 
-  constructor(private api : ApiService, private router:Router) { }
+  constructor(private api : ApiService, private router:Router, private http: HttpClient, private authService:AuthService) { }
 
   ngOnInit(): void {
     this.obtenerDatos();
-    this.obtenerDatos1()
   }
 
 
@@ -40,13 +41,6 @@ export class ChatComponent implements OnInit {
     this.api.getChat().subscribe(resp => {
       this.chats = resp;
       console.log(this.chats)
-    })
-  }
-
-  obtenerDatos1(){
-    this.api.getChat().subscribe(resp => {
-      this.chats1 = resp;
-      console.log(this.chats1)
     })
   }
 

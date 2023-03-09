@@ -43,9 +43,15 @@ export class ApiService {
   }
 
   getChat():Observable<ChatI[]>{
-    let direccion = this.url + 'api/chat/list';
+    let direccion = this.url + 'api/chat/list/id2';
     return this.http.get<ChatI[]>(direccion)
   }
+
+  getChatR():Observable<ChatR[]>{
+    let direccion = this.url + 'api/chat/list/id';
+    return this.http.get<ChatR[]>(direccion)
+  }
+
 
   postCrearCuenta(form : CrearCuentaI) : Observable<ResponseI>{
     let direccion = this.url + 'api/usuario/save';
@@ -58,4 +64,13 @@ export class ApiService {
   }
 
 
+
+}
+
+export interface ChatR{
+  mensaje?: any;
+  emisor?: any;
+  receptor? : any;
+  fecha?:any;
+  token?: any;
 }

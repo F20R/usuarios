@@ -3,5 +3,5 @@ export interface ChatI{
   emisor: any;
   receptor : any;
   fecha:any;
-  token?: any;
+  token: any;
 }
